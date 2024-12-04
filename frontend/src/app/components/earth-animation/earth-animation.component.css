@@ -1,0 +1,9 @@
+.earth-animation-container {
+  width: 900px;
+  height: 600px; /* Ajusta esta altura según el cuadro rojo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+

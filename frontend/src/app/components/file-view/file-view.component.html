@@ -1,0 +1,29 @@
+<div
+  *ngIf="image"
+  class="modal fade show d-block"
+  tabindex="-1"
+  role="dialog"
+  (click)="closeModal.emit()"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img
+          [src]="image.imageUrl"
+          class="img-fluid rounded"
+          [style.max-width.px]="500"
+          alt="Visualización de Imagen"
+        />
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="closeModal.emit()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

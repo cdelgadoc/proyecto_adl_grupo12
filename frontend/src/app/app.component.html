@@ -1,0 +1,63 @@
+<div class="container-fluid d-flex flex-column flex-md-row">
+  <!-- Sidebar Izquierdo -->
+  <app-info-sidebar
+    imageUrl="assets/images/ocelote.jpg"
+    title="Biodiversidad en Crisis"
+    text="En Colombia, la biodiversidad enfrenta una crisis debido a la destrucción
+      de hábitats, el cambio climático y la explotación ilegal. La deforestación
+      masiva, especialmente en la Amazonía y los Andes, ha reducido
+      drásticamente las áreas donde numerosas especies encuentran refugio y
+      alimento. Esto afecta gravemente a animales emblemáticos como el oso de
+      anteojos y el loro orejiamarillo, dos especies en peligro de extinción en
+      el país. El oso de anteojos, único oso nativo de Sudamérica, es esencial
+      para la salud de los ecosistemas de páramo y bosque andino. Por su parte,
+      el loro orejiamarillo depende de las palmas de cera, árbol también
+      amenazado, para su supervivencia. La pérdida de estas especies sería
+      devastadora para el equilibrio natural. La conservación de la fauna
+      colombiana es urgente, y se requieren esfuerzos colectivos para proteger
+      los ecosistemas y asegurar la supervivencia de estas y otras especies en
+      peligro."
+  ></app-info-sidebar>
+
+  <!-- Contenido Principal -->
+  <div class="content flex-grow-1 px-3">
+    <app-header></app-header>
+    <div class="my-4">
+      <app-file-upload
+        (filesSelected)="onFilesSelected($event)"
+      ></app-file-upload>
+    </div>
+    <div class="my-4">
+      <div *ngIf="images && images.length > 0; else noImages">
+        <app-file-table
+          [images]="images"
+          (deleteImage)="deleteImage($event)"
+          (viewImage)="openModal($event)"
+          (detectImage)="detectAnimal($event)">
+        </app-file-table>
+      </div>
+      <ng-template #noImages>
+        <div class="my-4 d-flex justify-content-center">
+          <app-earth-animation></app-earth-animation>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Sidebar Derecho -->
+  <app-info-sidebar
+    imageUrl="assets/images/deeplearning.png"
+    title="Detección Automática de Especies en Peligro en Colombia"
+    text="Este proyecto utiliza aprendizaje profundo para la detección automatizada
+      de especies en peligro en la región de la Orinoquía, Colombia. Con
+      técnicas avanzadas de visión por computadora y modelos como YOLO y Faster
+      R-CNN, el sistema analiza imágenes capturadas por cámaras trampa en áreas
+      remotas. Este enfoque permite identificar especies de manera eficiente y
+      no invasiva, superando las limitaciones de los métodos tradicionales de
+      monitoreo. Además, se aplican técnicas de preprocesamiento de imágenes
+      para mejorar la precisión en ambientes complejos. El sistema busca
+      facilitar la toma de decisiones informadas en conservación, apoyando la
+      preservación de la biodiversidad en ecosistemas vulnerables ante el
+      impacto humano."
+  ></app-info-sidebar>
+</div>

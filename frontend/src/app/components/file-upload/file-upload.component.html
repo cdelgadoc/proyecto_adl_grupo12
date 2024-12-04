@@ -1,0 +1,29 @@
+<div class="upload-section text-center my-3">
+  <div
+    class="drag-drop-area d-flex justify-content-between align-items-center"
+    (drop)="onDrop($event)"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+  >
+    <div class="upload-text">
+      <i class="bi bi-cloud-upload icon-upload"></i>
+      <div class="text-content">
+        <p class="m-0">Arrastra y suelta el archivo aquí</p>
+        <small>Límite: 200MB por archivo • PNG, JPG, JPEG</small>
+      </div>
+    </div>
+
+    <button class="btn btn-secondary btn-explore" (click)="fileInput.click()">
+      Explorar archivos
+    </button>
+
+    <input
+      type="file"
+      #fileInput
+      (change)="onFileSelected($event)"
+      accept="image/*"
+      multiple
+      style="display: none"
+    />
+  </div>
+</div>
