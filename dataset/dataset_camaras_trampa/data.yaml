@@ -1,0 +1,23 @@
+names:
+  0: "Armadillo"
+  1: "Black Agouti"
+  2: "Collared Peccary"
+  3: "White-lipped Peccary"  # Renombrada de Clase 20
+  4: "Crypturellus"
+  5: "Giant Anteater"
+  6: "White-tailed Deer"     # Renombrada de Clase 21
+  7: "Lowland Tapir"
+  8: "Margarita Island Capuchin"
+  9: "Ocelote"
+  10: "Rodent"
+  11: "Salvins Curassow"
+  12: "South American Coati"
+  13: "Southern Tamandua"
+  14: "Spixs Guan"
+  15: "Spotted Paca"
+  16: "Squirrel"
+  17: "Tayra"
+nc: 18
+test: ../test/images
+train: ../train/images
+val: ../valid/images
